@@ -1,0 +1,22 @@
+{
+  "contatos":[{
+    "id": 1,
+    "nome": "Jose da Silva",
+    "fone": "3398-9066",
+    "email": "jose.silva@hotmail.com"
+  },
+    {
+    "id": 2,
+    "nome": "Maria da Silva",
+    "fone": "3368-0012",
+    "email": "maria.silva@gmail.com"
+  },
+  {
+    "id": 3,
+    "nome": "Joao Pedro",
+    "fone": "9034-0012",
+    "email": "joao-pedro@gmail.com"
+  }
+
+  ]
+}
