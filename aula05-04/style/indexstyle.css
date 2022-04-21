@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  
+}
+
+nav{
+  background-color: #264653;
+  padding: 10px;
+  z-index: 0;
+ 
+}
+li.cad{
+  display: inline-block;
+}
+.drop-content{
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+.drop-content a{
+  text-decoration: none;
+  display: block;
+}
+li.cad:hover .drop-content {
+  display: block;
+}
+.cad a {
+  background-color: #457b9d;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.drop-content a {
+  background-color: #023e8a;
+  margin-top: 4px;
+}
+.drop-content li {
+  list-style-type: none;
+}
+.drop-content a:hover {
+  
+  background-color: #9d4edd;
+}

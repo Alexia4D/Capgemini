@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cliente</title>
+
+    <link rel="stylesheet" href="./style/clientestyle.css" />
+  </head>
+  <body>
+    <h2>Cadastro de Cliente</h2>
+    <div class="form">
+      <label for="nome">Nome</label>
+      <input type="text" placeholder="Informe nome" />
+
+      <label for="fone">Telefone</label>
+      <input type="text" placeholder="Informe fone" />
+
+      <label for="email">E-mail</label>
+      <input type="email" placeholder="Informe email" />
+
+      <input
+        type="file"
+        id="foto"
+        value="ola.webp"
+        placeholder="Selecione uma foto"
+        onchange="pegaImage()"
+      />
+      <img src="" alt="Cadastro" width="100px" height="100px" />
+
+      <button onclick="salvar()">Salvar</button>
+      <button onclick="consultar()">Consultar</button>
+      <hr />
+
+      <div>
+        <label id="snome"></label>
+        <img id="sfoto" src="#" alt="mostrar apos consulta" />
+      </div>
+
+      <script>
+        function pegaImage(event) {
+          var foto = document.getElementById('foto')
+          var path = foto.value
+          var ot = path.substr(12, path.lenght)
+          document.getElementsByTagName('img')[0].src = `./imagens/{ot}`
+        }
+        function salvar() {
+          let ob = {
+            nome: document.getElementById('nome').value,
+            foto: document.getElementsByTagName('img')[0].src
+          }
+        }
+        fetch('http://localhost:3000/clientes', {
+          method: 'POST',
+          body: JSON.stringify(ob),
+          headers: {
+            'Content-Type': 'Application/json'
+          }
+        }).catch(erro => console.log(erro))
+        function consultar() {
+          fetch('http://localhost:3000/clientes')
+            .then(x => x.text())
+            .then(data => display(data))
+        }
+        function display(data) {
+          let obj = JSON.parse(data)
+          document.getElementById('snome').innerHTML = obj[3].nome
+          document.getElementById('sfoto').src = obj[3].foto
+        }
+      </script>
+    </div>
+  </body>
+</html>
