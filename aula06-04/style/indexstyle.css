@@ -1,0 +1,41 @@
+*{
+  margin: 10px;
+  box-sizing:content-box;
+  
+}
+.container{
+  width: 200px;
+  margin: auto;
+  border: 2px dotted #8a817c;
+  padding: 10px;
+  background-color: #dad7cd;
+}
+input{
+  width: 90%;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+.btn-salvar{
+  background-color: #0ead69;
+  color: white;
+
+}
+.btn-salvar:hover {
+  background-color: white;
+  color: #0ead69
+}
+.btn-cancelar{
+  background-color: #bf0603;
+  color: white; 
+
+}
+.btn-cancelar:hover {
+  background-color: white;
+  color: #bf0603;
+}
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 2px;
+
+}

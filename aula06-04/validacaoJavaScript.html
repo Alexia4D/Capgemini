@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validação com JavaScript</title>
+
+    <link rel="stylesheet=" href="./style/validacaoJavaScript.css" />
+
+    <style>
+      .container {
+        width: 400px;
+        margin: auto;
+        color: red;
+      }
+      input {
+        width: 100%;
+      }
+      button {
+        margin-top: 10px;
+      }
+      label {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <div>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" placeholder="Informe Nome" />
+          <label id="msgNome"></label>
+        </div>
+        <div>
+          <label for="fone">Fone:</label>
+          <input type="text" id="fone" placeholder="Informe Telefone" />
+          <label id="msgNome"></label>
+        </div>
+      </form>
+      <div>
+        <button onclick="Onsubmit()">Gravar</button>
+        <p id="demo"></p>
+      </div>
+    </div>
+
+    <script>
+      function Onsubmit() {
+        var nome = document.getElementById('nome')
+        if (nome.value === '') {
+          alert('Informe nome')
+          nome.focus()
+          return
+        }
+        var fone = document.getElementById('fone')
+        if (fone.value === '') {
+          alert('Informe telefone')
+          fone.focus()
+          return
+        } else {
+          alert('Dados Gravados com sucesso')
+        }
+        document.getElementById('demo').innerHTML = text
+
+        document.getElementsByTagName('form')[0].submit()
+        document.getElementsByTagName('form')[1].submit()
+      }
+    </script>
+  </body>
+</html>

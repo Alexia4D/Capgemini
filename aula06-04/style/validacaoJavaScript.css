@@ -1,0 +1,14 @@
+.container {
+  width: 900px;
+  margin: auto;
+  color: red;
+}
+input{
+  width: 100%;
+}
+button{
+  margin-top: 10px;
+}
+label {
+  color: blue;
+}
