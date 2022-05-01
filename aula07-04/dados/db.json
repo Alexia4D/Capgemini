@@ -1,0 +1,78 @@
+{
+  "contatos": [
+    {
+      "nome": "Maria",
+      "fone": "23459099",
+      "email": "maria@gmail.com",
+      "id": 1
+    },
+    {
+      "nome": "Pedro",
+      "fone": "90872300",
+      "email": "pedro@hotmail.com",
+      "id": 2
+    }
+  ],
+  "categorias": [
+    {
+      "idcat": 1,
+      "nome": "Frutas"
+    },
+    {
+      "idcat": 2,
+      "nome": "Bebidas"
+    },
+    {
+      "idcat": 3,
+      "nome": "Açougue"
+    },
+    {
+      "idcat": 4,
+      "nome": "Padaria"
+    },
+    {
+      "idcat": 5,
+      "nome": "Material de Limpeza"
+    },
+    {
+      "idcat": 6,
+      "nome": "Frios"
+    }
+  ],
+  "fornecedor": [
+    {
+      "id": 1,
+      "nome": "Mercado do Sul"
+    },
+    {
+      "id": 2,
+      "nome": "Mercearia ZYC"
+    }
+  ],
+  "produtos": [
+    {
+      "descricao": "CARNE",
+      "preco": "23",
+      "estoque": "120",
+      "categoria": "Açougue",
+      "fornecedor": "Mercado do Sul",
+      "id": 1
+    },
+    {
+      "descricao": "PRESUNTO",
+      "preco": "9",
+      "estoque": "87",
+      "categoria": "Padaria",
+      "fornecedor": "Mercearia ZYC",
+      "id": 2
+    },
+    {
+      "descricao": "UVA",
+      "preco": "12",
+      "estoque": "65",
+      "fornecedor": "Mercado do Sul",
+      "categoria": "Frutas",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Produto</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body onload="loadDados()">
+    <h2 style="text-align: center">Dados de Produtos</h2>
+    <div class="container">
+      <form class="was-validated" novalidate>
+        <div>
+          <label for="descricao" class="form-label">DESCRIÇÃO</label>
+          <input
+            class="form-control"
+            type="text"
+            id="descricao"
+            placeholder="Informe descrição"
+            required
+          />
+
+          <div class="invalid-feedback">Informe descriçao</div>
+        </div>
+
+        <div>
+          <label for="preco" class="form-label">PREÇO</label>
+          <input
+            class="form-control"
+            type="number"
+            id="preco"
+            placeholder="Informe preço"
+            required
+          />
+
+          <div class="invalid-feedback">Informe preço</div>
+        </div>
+
+        <div>
+          <label for="estoque" class="form-label">ESTOQUE</label>
+          <input
+            class="form-control"
+            type="text"
+            id="estoque"
+            placeholder="Informe estoque"
+            required
+          />
+
+          <div class="invalid-feedback">Informe estoque</div>
+        </div>
+
+        <div>
+          <label for="fornecedor" class="form-label">FORNECEDOR: </label>
+          <select class="form-select" id="fornecedor" required></select>
+          <div class="invalid-feedback">Selecione fornecedor</div>
+
+          <label for="categoria">CATEGORIA: </label>
+          <select
+            class="form-select"
+            name="categoria"
+            id="categoria"
+            required
+          ></select>
+          <div class="invalid-feedback">Selecione categoria</div>
+        </div>
+      </form>
+
+      <div class="mt-5">
+        <button onclick="salvar()" class="btn btn-outline-primary">
+          Salvar
+        </button>
+        <button class="btn btn-outline-danger">Cancelar</button>
+      </div>
+    </div>
+
+    <script>
+      function loadDados() {
+        fetch('http://localhost:3000/categorias')
+          .then(x => x.text())
+          .then(data => {
+            var ret = displaySelect(data)
+            document.getElementById('categoria').innerHTML = ret
+          })
+
+        //Função que carrega os fornecedores
+
+        fetch('http://localhost:3000/fornecedor')
+          .then(x => x.text())
+          .then(data => {
+            var ret = displaySelect(data)
+            document.getElementById('fornecedor').innerHTML = ret
+          })
+      }
+      function displaySelect(data) {
+        let listaJson = JSON.parse(data)
+        var opt = ''
+        for (let indice in listaJson) {
+          opt += '<option>' + listaJson[indice].nome + '</option>'
+        }
+        return opt
+      }
+      function salvar() {
+        var produto = {
+          descricao: document.getElementById('descricao').value,
+          preco: document.getElementById('preco').value,
+          estoque: document.getElementById('estoque').value,
+          fornecedor: document.getElementById('fornecedor').value,
+          categoria: document.getElementById('categoria').value
+        }
+        fetch('http://localhost:3000/produtos', {
+          method: 'POST',
+          body: JSON.stringify(produto),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
