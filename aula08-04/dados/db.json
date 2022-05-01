@@ -1,0 +1,11 @@
+{
+  "produtoscard":[
+    {
+      "id": 1,
+      "nome": "Café",
+      "descricao": "Café Tradicional  Extra Forte",
+      "preco": 9.86,
+      "imagem": "./imagens/cafe2.jpg" 
+    }
+  ]
+}
