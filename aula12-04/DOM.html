@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .verde {
+      color: rgb(143, 40, 40);
+    }
+    .gremio {
+      color: rgb(114, 31, 223);
+    }
+    .colorado {
+      color: rgb(107, 212, 20);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!--Cria elemento filho no evento click do botão-->
+  </div>
+  <button onclick="criar()">Criar</button>
+  <button onclick="ativarCss()">Atribui CSS</button>
+  <button onclick="pegarCss()">Pegar CSS</button>
+
+  <script>
+    function criar(){
+      var parent = document.getElementsByTagName("div")[0];
+      var paragrafo = document.createElement("p")
+      paragrafo.innerHTML = "Olá!!"
+      paragrafo.className = "gremio"
+      parent.appendChild(paragrafo)
+
+      var listaFrutas = document.createElement("ol")
+      listaFrutas.innerHTML = "<li> Banana </li>"
+      listaFrutas.innerHTML += "<li> Uva </li>"
+      listaFrutas.innerHTML += "<li> Maçã </li>"
+      listaFrutas.setAttribute("class", "verde") 
+      parent.appendChild(listaFrutas)
+
+      var listaTarefas = document.createElement("ul")
+      var li = document.createElement("li")
+      li.style.color = "red"
+      li.innerHTML = "Cortar Grama"
+      listaTarefas.appendChild(li)
+      parent.appendChild(listaTarefas)
+
+      var bt = document.createElement("button")
+      bt.innerHTML = "Hello"
+      bt.setAttribute("onclick", "alert('oi')")
+      parent.appendChild(bt)
+    }
+    function ativarCss(){
+      document.getElementsByTagName("p")[0].setAttribute("class", "colorado");
+    }
+    function pegarCss(){
+      var classeCss = document.getElementsByTagName("p")[0].getAttribute("class")
+      alert(classeCss)
+    }
+  </script>
+  
+</body>
+</html>
