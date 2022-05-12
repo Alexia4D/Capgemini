@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./estilos/style.css">
+  <script src="./script/classes.js"></script> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="entrada">
+      <label>Nome:</label>
+      <input type="text" placeholder="Informe nome" required>
+
+      <label>Telefone:</label>
+      <input type="text" placeholder="Informe telefone" required>
+
+      <label>Email:</label>
+      <input type="email" placeholder="Informe email" required>
+    </div>
+
+    <div class="botoes">
+      <button onclick="gravar()" class="salvar">Salvar</button>
+      <button class="cancelar">Cancelar</button>
+    </div>
+
+  </div>
+  <!-- <button onclick="acessaClasse()">Acessar</button> -->
+
+  <script>
+    function gravar(){
+      var nome = document.getElementsByTagName('input')[0].value
+      var fone = document.getElementsByTagName('input')[1].value
+      var email= document.getElementsByTagName('input')[2].value
+
+      let obj = new Contato(0, nome, fone, email)
+      obj.salvar()
+    }
+  </script>
+  
+</body>
+</html>

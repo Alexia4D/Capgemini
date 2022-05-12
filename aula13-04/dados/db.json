@@ -1,0 +1,22 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Joao",
+      "fone": "98764533",
+      "email": "joao@email.com"
+    },
+    {
+      "id": 2,
+      "nome": "Pedro",
+      "fone": "89761234",
+      "email": "pedro@email.com"
+    },
+    {
+      "id": 3,
+      "nome": "Maria",
+      "fone": "98672355",
+      "email": "maria@email.com"
+    }
+  ]
+}
